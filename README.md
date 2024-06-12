@@ -1,4 +1,4 @@
-<h3 align="center">Medidas Estatísticas - Em andamento :warning:</h3>
+<h3 align="center">Medidas Estatísticas - Em refatoração :warning:</h3>
 
 ---
 
