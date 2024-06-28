@@ -13,86 +13,38 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <div class="popup">
-        <div class="popup-box">
-            <ion-icon name="close-circle-outline" id="close-btn"></ion-icon>
-            <div class="popup-content">
-                <ion-icon name="alert-circle-outline"></ion-icon>
-                <p>Insira números válidos!</p>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <header>
-            <h1><span id="main-word">Média</span>, <span id="main-word">Moda</span> e <span id="main-word">Mediana</span> são medidas de tendência central utilizadas em estatística.</h1>
-            <div class="explanation">
-                <p>A <span id="main-word">Média Aritmética</span> de um conjunto de dados é obtida somando todos os valores e dividindo o valor encontrado pelo número de dados desse conjunto.</p>
-                <p>A <span id="main-word">Média Aritmética Ponderada</span> é a média que leva em consideração o peso atribuído a cada um dos valores dos quais queremos calcular a média. Quanto maior o peso de determinado valor, maior será o impacto dele na média, tornando esses valores mais relevantes.</p>
-                <p>A <span id="main-word">Moda</span> é o número mais frequente — ou seja, o número que aparece o maior número de vezes.</p>
-                <p>A <span id="main-word">Mediana</span> é o número do centro; é encontrado ordenando-se todos os dados e escolhendo o que está no centro (ou, se houver dois números no centro, calculando-se a média desses dois números).</p>
+    <main class="main flex-column">
+        <header class="flex-column">
+            <h1><span id="highlighted-word">Média</span>, <span id="highlighted-word">Moda</span> e <span id="highlighted-word">Mediana</span> são medidas de tendência central utilizadas em estatística.</h1>
+            <div class="explanation flex-column">
+                <p>A <span id="highlighted-word">Média Aritmética Simples</span> de um conjunto de dados é obtida somando todos os valores e dividindo o valor encontrado pelo número de dados desse conjunto.</p>
+                <p>A <span id="highlighted-word">Média Aritmética Ponderada</span> é a média que leva em consideração o peso atribuído a cada um dos valores dos quais queremos calcular a média. Quanto maior o peso de determinado valor, maior será o impacto dele na média, tornando esses valores mais relevantes.</p>
+                <p>A <span id="highlighted-word">Moda</span> é o número mais frequente — ou seja, o número que aparece o maior número de vezes.</p>
+                <p>A <span id="highlighted-word">Mediana</span> é o número do centro; é encontrado ordenando-se todos os dados e escolhendo o que está no centro (ou, se houver dois números no centro, calculando-se a média desses dois números).</p>
             </div>
         </header>
 
-        <div class="wrapper">
-            <div class="arithCalc arithmeticAverage">
-                <h1><span id="main-word">Média Aritmética</span></h1>
-                <div class="content">
-                    <h1>Insira valores para calcular a Média Aritmética.</h1>
-                    <p>Utilize ponto(.) para números com casas decimais.</p>
-                    <p>Separe os valores usando espaço. Ex.: 1 2 3...</p>
-                    <div class="inputs">
-                        <input type="text" name="arithmetic-average-input" id="arithmetic-average-input" placeholder="Insira os valores aqui" autocomplete="off">
-                        <button id="btn">Calcular</button>
-                    </div>
+        <section class="calculation-area">
+            <div class="operations-area flex-column">
+                <h1>Selecione a operação que deseja calcular</h1>
+                <div class="radio-input flex-column">
+                    <input value="arithmetic-average" name="calculation" id="arithmetic-average" type="radio">
+                    <label for="arithmetic-average">Média Aritmética Simples</label>
+                    <input value="weighted-arithmetic-average" name="calculation" id="weighted-arithmetic-average" type="radio">
+                    <label for="weighted-arithmetic-average">Média Aritmética Ponderada</label>
+                    <input value="mode" name="calculation" id="mode" type="radio">
+                    <label for="mode">Moda</label>
+                    <input value="median" name="calculation" id="median" type="radio">
+                    <label for="median">Mediana</label>
                 </div>
-                <h1 id="result">Resultado: <span id="main-word"></span></h1>
+                <button class="btn" id="select-btn">Selecionar</button>
             </div>
-            <div class="arithCalc weightedAverage">
-                <h1><span id="main-word">Média Aritmética Ponderada</span></h1>
-                <div class="content">
-                    <h1>Insira valores e pesos para calcular a Média Ponderada.</h1>
-                    <p>Utilize ponto(.) para números com casas decimais.</p>
-                    <p>Separe os valores usando espaço. Ex.: 1 2 3...</p>
-                    <div class="inputs">
-                        <input type="text" name="value-input" id="value-input" placeholder="Insira os valores aqui" autocomplete="off">
-                        <input type="text" name="weight-input" id="weight-input" placeholder="Insira os pesos aqui" autocomplete="off">
-                        <button id="btn">Calcular</button>
-                    </div>
-                </div>
-                <h1 id="result">Resultado: <span id="main-word"></span></h1>
-            </div>
-            <div class="arithCalc arithmeticAverage">
-                <h1><span id="main-word">Moda</span></h1>
-                <div class="content">
-                    <h1>Insira valores para calcular a Moda.</h1>
-                    <p>Utilize ponto(.) para números com casas decimais.</p>
-                    <p>Separe os valores usando espaço. Ex.: 1 2 3...</p>
-                    <div class="inputs">
-                        <input type="text" name="mode" id="mode" placeholder="Insira os valores aqui" autocomplete="off">
-                        <button id="btn">Calcular</button>
-                    </div>
-                </div>
-                <h1 id="result">Resultado: <span id="main-word"></span></h1>
-            </div>
-            <div class="arithCalc arithmeticAverage">
-                <h1><span id="main-word">Mediana</span></h1>
-                <div class="content">
-                    <h1>Insira valores para calcular a Mediana.</h1>
-                    <p>Utilize ponto(.) para números com casas decimais.</p>
-                    <p>Separe os valores usando espaço. Ex.: 1 2 3...</p>
-                    <div class="inputs">
-                        <input type="text" name="median" id="median" placeholder="Insira os valores aqui" autocomplete="off">
-                        <button id="btn">Calcular</button>
-                    </div>
-                </div>
-                <h1 id="result">Resultado: <span id="main-word"></span></h1>
-            </div>
-        </div>
-    </div>
+        </section>
+    </main>
 
-    <script src="./script.js"></script>
+    <script src="./js/script.js" type="module"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>
