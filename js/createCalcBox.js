@@ -1,4 +1,4 @@
-import { thereIsACalculationBox, arithmeticAverage, weightedAverage, mode, median } from "./operations.js"
+import { arithmeticAverage, weightedAverage, mode, median } from "./operations.js"
 
 const calculationArea = document.querySelector('.calculation-area')
 
@@ -6,6 +6,18 @@ export const createArithmeticAverageBox = () => createCalculationBox('Média Ari
 export const createWeightedAverageBox = () => createCalculationBox('Média Aritmética Ponderada', weightedAverage)
 export const createModeBox = () => createCalculationBox('Moda', mode)
 export const createMedianBox = () => createCalculationBox('Mediana', median)
+
+// verifica se na seção "calculation-area" tem o segundo filho que seria a área para calcular
+// se sim, a variável "calculationArea" vai receber o segundo filho e, na hora de escolher outro tipo
+// de cálculo, irá remover o filho anterior e adicionar o requisitado
+const thereIsACalculationBox = () => {
+    const calculationArea = document.querySelector('.calculation-area')
+
+    if(calculationArea.children[1]){
+        const createdChild = calculationArea.children[1]
+        calculationArea.removeChild(createdChild)
+    }
+}
 
 const createCalculationBox = (title, calculateFunction) => {
     thereIsACalculationBox()

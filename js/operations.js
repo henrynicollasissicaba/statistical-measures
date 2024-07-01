@@ -111,7 +111,6 @@ const medianCalc = (...numbers) => {
 const stringToNumber = (input) => {
     // Remove espacos ao redor das virgulas e substitui espacos restantes por virgulas
     const stringNumbers = input.replace(/,\s*/g, ',').replace(/\s+/g, ',')
-    console.log(stringNumbers)
 
     // Converte a string em array de numeros
     return stringNumbers.split(',').map(Number)
@@ -121,6 +120,10 @@ const checkUserInput = (input) => {
     const allowedChars = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ' ', ',', '.']
     // Transformando o dado do usuario em um array de caracteres 
     const entry = input.split('')
+
+    if(!input){
+        showErrorMessage('Insira valores válidos!')
+    }
 
     // Verificando cada caractere se e valido com o que e permitido
     for(let char of entry){
@@ -139,16 +142,4 @@ const showErrorMessage = (text) => {
             icon: 'error',
             confirmButtonText: 'Tentar novamente'
          })
-}
-
-// verifica se na seção "calculation-area" tem o segundo filho que seria a área para calcular
-// se sim, a variável "calculationArea" vai receber o segundo filho e, na hora de escolher outro tipo
-// de cálculo, irá remover o filho anterior e adicionar o requisitado
-export const thereIsACalculationBox = () => {
-    const calculationArea = document.querySelector('.calculation-area')
-
-    if(calculationArea.children[1]){
-        const createdChild = calculationArea.children[1]
-        calculationArea.removeChild(createdChild)
-    }
 }
