@@ -123,6 +123,7 @@ const checkUserInput = (input) => {
 
     if(!input){
         showErrorMessage('Insira valores válidos!')
+        return
     }
 
     // Verificando cada caractere se e valido com o que e permitido
